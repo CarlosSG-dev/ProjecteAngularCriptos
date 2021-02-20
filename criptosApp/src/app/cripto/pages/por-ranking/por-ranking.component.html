@@ -1,0 +1,46 @@
+<h2>Por Ranking</h2>
+<hr>
+<div class="row">
+    <div class="col">
+        <form autocomplete="off" (ngSubmit) = "buscar()">
+            <input type="text" name="termino" placeholder="Buscar Moneda..." class="form-control" [(ngModel)]="termino">
+
+        </form>
+    </div>
+</div>
+
+<hr>
+<div class="alert alert-danger">
+    No se ha encontrado ninguna moneda con el nombre {{termino}}
+</div>
+
+<div class="row">
+    <div class="col">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Ranking</th>
+                    <th>Icono</th>
+                    <th>Nombre</th>
+                    <th>Precio</th>
+                    <th>Capitalización</th>
+                    <th>Exchanges</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Icono</td>
+                    <td>Nombre</td>
+                    <td>Precio</td>
+                    <td>Capitalización</td>
+                    <td>
+                        <a href="#">Ver...</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
