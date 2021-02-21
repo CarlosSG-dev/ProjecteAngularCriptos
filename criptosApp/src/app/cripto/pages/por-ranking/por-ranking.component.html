@@ -10,13 +10,13 @@
 </div>
 
 <hr>
-<div class="alert alert-danger">
+<div *ngIf="errorTrue" class="alert alert-danger">
     No se ha encontrado ninguna moneda con el nombre {{termino}}
 </div>
 
 <div class="row">
     <div class="col">
-        <table class="table table-hover">
+        <table class="table table-hover" *ngIf="!errorTrue">
             <thead>
                 <tr>
                     <th>Ranking</th>

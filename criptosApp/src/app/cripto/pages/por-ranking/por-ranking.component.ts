@@ -10,17 +10,24 @@ import { CriptoService } from '../../services/cripto.service';
 export class PorRankingComponent{
 
   termino: string = "Hola Mundo"
+  errorTrue : boolean = false;
   
 
   buscar(){
+    this.errorTrue = false;
     console.log(this.termino);
     
     this.CriptoService.buscarMoneda(this.termino)
-      .subscribe(resp =>{
-        console.log(resp);
+      .subscribe((resp) =>{
+        
+        console.log(resp);       
+      }, (err)=>{
+        this.errorTrue = true;
+        console.log('error de peticion')
       })
 
   }
+  
 
   constructor(private CriptoService: CriptoService) { }
 
