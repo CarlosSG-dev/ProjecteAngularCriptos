@@ -1,1 +1,15 @@
-<p>ver-moneda works!</p>
+<p>Ver Moneda Funciona, faltaría implementar bé l'API o crear una Card de bootstrap p ex:</p>
+<div class="alert alert-info"
+    *ngIf="cripto; else divCripto"
+>Espere mientras se carga la info...</div>
+
+<ng-template #divCripto>
+<div class="card" style="width: 18rem;">
+    <img class="card-img-top" src="btc.jpg" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">Nombre de la Cripto</h5>
+      <p class="card-text">Descripción de la moneda</p>
+      <a href="#" class="btn btn-primary">Volver</a>
+    </div>
+  </div>
+</ng-template>

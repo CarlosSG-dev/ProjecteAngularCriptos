@@ -1,4 +1,6 @@
-<h2>Por Ranking</h2>
+
+<div class="animate__animated animate__fadeIn">
+    <h2>Por Ranking</h2>
 <hr>
 <div class="row">
     <div class="col">
@@ -9,13 +11,16 @@
 </div>
 
 <hr>
+
+</div>
+
 <div *ngIf="errorTrue" class="alert alert-danger">
     No se ha encontrado ninguna moneda con el nombre {{termino}}
 </div>
 
 <div class="row" *ngIf="criptos.length > 0">
     <div class="col">
-       <app-cripto-tabla [criptos]="criptos"></app-cripto-tabla>
+       <app-cripto-tabla class="animate__animated animate__fadeInDown" [criptos]="criptos"></app-cripto-tabla>
     </div>
 </div>
 

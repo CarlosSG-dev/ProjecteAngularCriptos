@@ -7,7 +7,7 @@
             <th>Valor más alto en 24h</th>
             <th>Precio Actual</th>
             <th>Capitalización</th>
-            <th>Exchanges</th>
+            <th>Más información</th>
         </tr>
     </thead>
     <tbody>
@@ -22,7 +22,7 @@
             <td>{{cripto.current_price | number}}$</td>
             <td>{{cripto.market_cap | number}}$</td>
             <td>
-                <a [routerLink]="['/moneda', cripto.price_change_24h | number]">Ver...</a>
+                <a [routerLink]="['/moneda', cripto.id]">Ver...</a>
             </td>
         </tr>
     </tbody>

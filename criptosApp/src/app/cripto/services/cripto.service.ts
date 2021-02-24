@@ -24,6 +24,14 @@ export class CriptoService {
       
     }
 
+    getMonedaPorId( id:string): Observable<Cripto>{
+      
+      const url = `${this.apiUrl}/coins/markets?vs_currency=usd&ids=${id.toLowerCase()}&sparkline=false&price_change_percentage=24h`                                  
+      return this.http.get<Cripto>(url);
+      
+      
+    }
+
    
   
 }

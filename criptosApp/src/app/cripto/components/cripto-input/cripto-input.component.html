@@ -1,4 +1,8 @@
 <form autocomplete="off" (ngSubmit) = "buscar()">
-    <input type="text" name="termino" placeholder="Buscar Moneda..." class="form-control" [(ngModel)]="termino" (input)="teclaPulsada()">
+    <input type="text" name="termino" 
+    placeholder="Buscar Moneda... (Presionar Enter y dejar en blanco para ver todas las cryptos)" 
+    class="form-control" 
+    [(ngModel)]="termino" 
+    (input)="teclaPulsada()">
 
 </form>

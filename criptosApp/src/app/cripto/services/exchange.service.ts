@@ -14,6 +14,8 @@ export class ExchangeService {
       
 
     buscarExchange(termino:string): Observable<Exchanges[]>{
+      //NO PUC IMPLEMENTAR LA BÚSQUEDA PER NOM PERQUÈ LA PART DELS EXCHANGES DE L'API ESTA EN FASE BETA  
+      //I SOLS HEM DEIXA MOSTRAR-LOS PEL NUMERO QUE VULGA LLISTAR, EN ESTE CAS, 50
       const url = `${this.apiUrl}exchanges?per_page=50`
       return this.http.get<Exchanges[]>(url);
 
