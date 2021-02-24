@@ -12,7 +12,7 @@ const routes: Routes = [{
   pathMatch: 'full'
 },
 {
-  path:'precio',
+  path:'exchange',
   component: PorPrecioComponent,
   pathMatch: 'full'
 },

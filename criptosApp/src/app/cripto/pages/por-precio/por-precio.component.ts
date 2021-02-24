@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Cripto } from '../../interfaces/cripto.interface';
+import { Exchanges } from '../../interfaces/exchanges.interface';
 import { CriptoService } from '../../services/cripto.service';
+import { ExchangeService} from '../../services/exchange.service';
 
 
 @Component({
@@ -12,35 +14,38 @@ import { CriptoService } from '../../services/cripto.service';
 export class PorPrecioComponent {
 
   
-  termino: string = "Bitcoin, Ethereum"
+  termino: string = "Binance"
   errorTrue : boolean = false;
-  criptos : Cripto[] = [];
+  exchanges: Exchanges[] = [];
   
 
   buscar(termino: string){
     this.errorTrue = false;
     this.termino = termino;
     
-    this.CriptoService.buscarExchange(this.termino)
-      .subscribe((cripto) =>{
-        if(cripto.length < 1){
-          console.log('No se ha encontrado ninguna moneda con ese nombre')
+    this.ExchangeService.buscarExchange(this.termino)
+      .subscribe((exchange) =>{
+        if(exchange.length < 1){
+          console.log('No se ha encontrado ningun exchange con ese nombre')
           this.errorTrue = true;
         }else{
           this.errorTrue = false;
-          this.criptos = cripto;
-          console.log(cripto); 
+          this.exchanges= exchange;        
+          console.log(exchange); 
         }              
       }, (err)=>{
         this.errorTrue = true;
         console.log('error de peticion')
-        this.criptos = [];
+        this.exchanges = [];
       })
 
   }
 
+  sugerencias(termino:string){
+    this.errorTrue = false;
+  }
  
   
 
-  constructor(private CriptoService: CriptoService) { }
+  constructor(private ExchangeService: ExchangeService) { }
 }

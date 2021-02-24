@@ -8,11 +8,13 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { CriptoTablaComponent } from './components/cripto-tabla/cripto-tabla.component';
 import { CriptoInputComponent } from './components/cripto-input/cripto-input.component';
+import { CriptoExchangesComponent } from './components/cripto-exchanges/cripto-exchanges.component';
+import { ExchangeInputComponent } from './components/exchange-input/exchange-input.component';
 
 
 
 @NgModule({
-  declarations: [PorPrecioComponent, PorRankingComponent, PorCapitalizacionComponent, VerMonedaComponent, CriptoTablaComponent, CriptoInputComponent],
+  declarations: [PorPrecioComponent, PorRankingComponent, PorCapitalizacionComponent, VerMonedaComponent, CriptoTablaComponent, CriptoInputComponent, CriptoExchangesComponent, ExchangeInputComponent],
   imports: [
     CommonModule,
     FormsModule,

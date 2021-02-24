@@ -3,6 +3,8 @@ import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { catchError} from 'rxjs/operators';
 import { Cripto } from '../interfaces/cripto.interface';
+import { Exchanges } from '../interfaces/exchanges.interface';
+
 
 @Injectable({
   providedIn: 'root'
@@ -22,10 +24,6 @@ export class CriptoService {
       
     }
 
-    buscarExchange(termino:string): Observable<Cripto[]>{
-      const url = `${this.apiUrl}exchanges?per_page=50`
-      return this.http.get<Cripto[]>(url);
-
-    }
+   
   
 }

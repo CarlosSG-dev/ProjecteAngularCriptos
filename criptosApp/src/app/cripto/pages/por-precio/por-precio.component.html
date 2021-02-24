@@ -2,20 +2,21 @@
 <hr>
 <div class="row">
     <div class="col">
-        <app-cripto-input
+        <app-exchange-input
             (onEnter)="buscar( $event )"
-            ></app-cripto-input>
+            (onDebounce)="sugerencias($event)"
+            ></app-exchange-input>
     </div>
 </div>
 
 <hr>
 <div *ngIf="errorTrue" class="alert alert-danger">
-    No se ha encontrado ninguna moneda con el nombre {{termino}}
+    No se ha encontrado ningun exchange con el nombre {{termino}}
 </div>
 
-<div class="row" *ngIf="criptos.length > 0">
+<div class="row" *ngIf="exchanges.length > 0">
     <div class="col">
-       <app-cripto-tabla [criptos]="criptos"></app-cripto-tabla>
+       <app-cripto-exchanges [exchanges]="exchanges"></app-cripto-exchanges>
     </div>
 </div>
 

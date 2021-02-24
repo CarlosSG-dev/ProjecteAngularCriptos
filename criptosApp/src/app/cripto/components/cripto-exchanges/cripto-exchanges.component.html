@@ -1,0 +1,25 @@
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Ranking</th>
+            <th>Icono</th>
+            <th>Nombre</th>
+            <th>Link</th>
+            <th>País Registrado</th>
+            <th>Volumen de Trading en 24h</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let exchange of exchanges; let i = index">
+            <td>{{exchange.trust_score_rank}}</td>
+            <td>
+                <img class="small-flag" [src]="exchange.image">
+                
+            </td>
+            <td>{{exchange.name}}</td>
+            <td><a>{{exchange.url}}</a></td>
+            <td>{{exchange.country}}</td>
+            <td>{{exchange.trade_volume_24h_btc | number}}$</td>           
+        </tr>
+    </tbody>
+</table>
