@@ -1,1 +1,21 @@
-<p>por-precio works!</p>
+<h2>Por Cambio de Precio</h2>
+<hr>
+<div class="row">
+    <div class="col">
+        <app-cripto-input
+            (onEnter)="buscar( $event )"
+            ></app-cripto-input>
+    </div>
+</div>
+
+<hr>
+<div *ngIf="errorTrue" class="alert alert-danger">
+    No se ha encontrado ninguna moneda con el nombre {{termino}}
+</div>
+
+<div class="row" *ngIf="criptos.length > 0">
+    <div class="col">
+       <app-cripto-tabla [criptos]="criptos"></app-cripto-tabla>
+    </div>
+</div>
+

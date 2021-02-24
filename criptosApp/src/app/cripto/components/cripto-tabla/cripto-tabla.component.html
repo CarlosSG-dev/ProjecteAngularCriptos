@@ -1,0 +1,29 @@
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Ranking</th>
+            <th>Icono</th>
+            <th>Nombre</th>
+            <th>Valor más alto en 24h</th>
+            <th>Precio Actual</th>
+            <th>Capitalización</th>
+            <th>Exchanges</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let cripto of criptos">
+            <td>{{cripto.market_cap_rank}}</td>
+            <td>
+                <img class="small-flag" [src]="cripto.image">
+                
+            </td>
+            <td>{{cripto.name}}</td>
+            <td> {{cripto.high_24h | number}}$ </td>
+            <td>{{cripto.current_price | number}}$</td>
+            <td>{{cripto.market_cap | number}}$</td>
+            <td>
+                <a [routerLink]="['/moneda', cripto.price_change_24h | number]">Ver...</a>
+            </td>
+        </tr>
+    </tbody>
+</table>

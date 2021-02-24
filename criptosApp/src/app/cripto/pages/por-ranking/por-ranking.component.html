@@ -2,10 +2,9 @@
 <hr>
 <div class="row">
     <div class="col">
-        <form autocomplete="off" (ngSubmit) = "buscar()">
-            <input type="text" name="termino" placeholder="Buscar Moneda..." class="form-control" [(ngModel)]="termino">
-
-        </form>
+        <app-cripto-input
+            (onEnter)="buscar( $event )"
+            (onDebounce)="sugerencias($event)"></app-cripto-input>
     </div>
 </div>
 
@@ -14,32 +13,9 @@
     No se ha encontrado ninguna moneda con el nombre {{termino}}
 </div>
 
-<div class="row">
+<div class="row" *ngIf="criptos.length > 0">
     <div class="col">
-        <table class="table table-hover" *ngIf="!errorTrue">
-            <thead>
-                <tr>
-                    <th>Ranking</th>
-                    <th>Icono</th>
-                    <th>Nombre</th>
-                    <th>Precio</th>
-                    <th>Capitalización</th>
-                    <th>Exchanges</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Icono</td>
-                    <td>Nombre</td>
-                    <td>Precio</td>
-                    <td>Capitalización</td>
-                    <td>
-                        <a href="#">Ver...</a>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+       <app-cripto-tabla [criptos]="criptos"></app-cripto-tabla>
     </div>
 </div>
 
