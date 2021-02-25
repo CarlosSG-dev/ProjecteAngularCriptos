@@ -1,12 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
-import { PorCapitalizacionComponent } from './cripto/pages/por-capitalizacion/por-capitalizacion.component';
+
 import { PorPrecioComponent } from './cripto/pages/por-precio/por-precio.component';
 import { PorRankingComponent } from './cripto/pages/por-ranking/por-ranking.component';
 import { VerMonedaComponent } from './cripto/pages/ver-moneda/ver-moneda.component';
 import { FormularioComponent } from './cripto/pages/formulario/formulario.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { LoginComponent } from './cripto/components/login/login.component';
 
 const routes: Routes = [{
   path: '',
@@ -19,8 +20,8 @@ const routes: Routes = [{
   pathMatch: 'full'
 },
 {
-  path:'capitalizacion',
-  component: PorCapitalizacionComponent,
+  path:'login',
+  component: LoginComponent,
   pathMatch: 'full'
 },
 {

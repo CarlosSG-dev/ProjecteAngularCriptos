@@ -10,7 +10,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor = "let exchange of exchanges; let i = index">
+        <tr *ngFor = "let exchange of exchanges; let i = index" class="animate__animated animate__fadeInDown">
             <td>{{exchange.trust_score_rank}}</td>
             <td>
                 <img class="small-flag" [src]="exchange.image">

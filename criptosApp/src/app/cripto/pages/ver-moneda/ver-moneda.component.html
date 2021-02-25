@@ -1,11 +1,13 @@
-<p>Ver Moneda Funciona, faltaría implementar bé l'API o crear una Card de bootstrap p ex:</p>
+<p>Ver Moneda Funciona, faltaría implementar bien la API o crear una Card de bootstrap p ej:</p>
+
+<!-- ngIf aparecería mientras se cargase la información pero no està recogiendo la información de la moneda desde la API, tendría que implementarse-->
 <div class="alert alert-info"
     *ngIf="cripto; else divCripto"
 >Espere mientras se carga la info...</div>
 
 <ng-template #divCripto>
 <div class="card" style="width: 18rem;">
-    <img class="card-img-top" src="btc.jpg" alt="Card image cap">
+    <img class="card-img-top" [src]="" alt="Imagen Cripto">
     <div class="card-body">
       <h5 class="card-title">Nombre de la Cripto</h5>
       <p class="card-text">Descripción de la moneda</p>

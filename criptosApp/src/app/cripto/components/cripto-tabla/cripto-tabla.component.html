@@ -12,7 +12,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor = "let cripto of criptos">
+        <tr *ngFor = "let cripto of criptos" class="animate__animated animate__fadeInDown">
             <td>{{cripto.market_cap_rank}}</td>
             <td>
                 <img class="small-flag" [src]="cripto.image">
