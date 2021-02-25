@@ -6,6 +6,7 @@ import { HttpClientModule} from '@angular/common/http'
 import { AppComponent } from './app.component';
 import { CriptoModule } from './cripto/cripto.module';
 import { SharedModule } from './shared/shared.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { SharedModule } from './shared/shared.module';
     AppRoutingModule,
     CriptoModule,
     SharedModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
     
   ],
   providers: [],

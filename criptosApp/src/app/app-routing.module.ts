@@ -5,6 +5,8 @@ import { PorCapitalizacionComponent } from './cripto/pages/por-capitalizacion/po
 import { PorPrecioComponent } from './cripto/pages/por-precio/por-precio.component';
 import { PorRankingComponent } from './cripto/pages/por-ranking/por-ranking.component';
 import { VerMonedaComponent } from './cripto/pages/ver-moneda/ver-moneda.component';
+import { FormularioComponent } from './cripto/pages/formulario/formulario.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 const routes: Routes = [{
   path: '',
@@ -22,6 +24,11 @@ const routes: Routes = [{
   pathMatch: 'full'
 },
 {
+  path:'formulario',
+  component: FormularioComponent,
+  pathMatch: 'full'
+},
+{
   path:'moneda/:id',
   component: VerMonedaComponent,
   pathMatch: 'full'
@@ -35,7 +42,9 @@ const routes: Routes = [{
   declarations: [],
   imports: [
     CommonModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    ReactiveFormsModule
+    
   ],
   exports:[
     RouterModule

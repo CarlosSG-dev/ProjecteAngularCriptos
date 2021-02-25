@@ -1,0 +1,209 @@
+<div class="contenido animate__animated animate__fadeIn col-12">
+<h2>Template Formulario</h2>
+<hr>
+
+
+<form #miFormulario="ngForm" >
+
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Selecciona tu Género</label>
+        <div class="col-sm-9">
+
+            <div class="form-check">
+                <input class="form-check-input"
+                       type="radio"
+                       value="M"
+                       [(ngModel)]="persona.genero"
+                       name="radioGenero"
+                       id="radioMasculino"
+                       required>
+                <label class="form-check-label" for="radioMasculino">
+                  Masculino
+                </label>
+            </div>
+
+            <div class="form-check">
+                <input class="form-check-input"
+                       type="radio"
+                       value="F"
+                       [(ngModel)]="persona.genero"
+                       name="radioGenero"
+                       id="radioFemenino"
+                       required>
+                <label class="form-check-label" for="radioFemenino">
+                  Femenino
+                </label>
+            </div>
+
+        </div>
+    </div>
+
+    
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Notificaciones</label>
+        <div class="col-sm-9">
+
+            <div class="form-check form-switch mt-2">
+                <input class="form-check-input"
+                       type="checkbox"
+                       [(ngModel)]="persona.notificaciones"
+                       name="notificaciones"
+                       id="flexSwitchCheckChecked">
+                <label class="form-check-label" for="flexSwitchCheckChecked">Quiero recibir notificaciones sobre Criptomonedas</label>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label"></label>
+        <div class="col-sm-9">
+            <div class="form-check">
+                <input class="form-check-input"
+                       type="checkbox"
+                       name="terminos"
+                       [(ngModel)]="terminosYCondiciones"
+                       id="flexCheckDefault"
+                       required>
+                <label class="form-check-label" for="flexCheckDefault">
+                  Términos y condiciones de uso
+                </label>
+            </div>
+        </div>
+    </div>
+    
+
+    <!-- Boton submit -->
+    <div class="row">
+        <div class="col">
+            <button class="btn btn-primary float-end"
+                    [disabled]="miFormulario.invalid">
+                Guardar
+            </button>
+        </div>
+    </div>
+
+</form>
+
+<h5>Valor del formulario</h5>
+<pre>{{ miFormulario.value | json }}</pre>
+<br>
+
+<h5>Persona</h5>
+<pre>{{ persona | json }}</pre>
+<br>
+
+<h5>Valid</h5>
+<pre>{{ miFormulario.valid }}</pre>
+
+<h5>Términos</h5>
+<pre>{{ miFormulario.controls?.terminos?.errors | json }}</pre>
+
+<hr>
+
+</div>
+
+    <h2>Formulario Reactivo de Compra de Monedas</h2>
+<hr>
+<div class="row">
+    <div class="col">
+
+        <form (ngSubmit)="guardar()" autocomplete="off" [formGroup]="miFormulario2">
+            
+            <!-- Campo de producto -->
+            <div class="mb-3 row">
+                <label class="col-sm-3 col-form-label">Producto</label>
+                <div class="col-sm-9">
+                    
+                    <input type="text"
+                           class="form-control"
+                           formControlName="nombre"
+                           placeholder="Nombre del producto">
+
+                    <span class="form-text text-danger"
+                          *ngIf="campoEsValido('nombre')">
+                        Debe tener al menos 3 letras
+                    </span>
+                </div>
+            </div>
+
+            <!-- Campo de producto -->
+            <div class="mb-3 row">
+                <label class="col-sm-3 col-form-label">Precio</label>
+                <div class="col-sm-9">
+                    <input type="number"
+                           class="form-control"
+                           formControlName="precio"
+                           placeholder="Precio del producto">
+                    <span class="form-text text-danger"
+                          *ngIf="campoEsValido('precio')">
+                        El precio debe de ser 0 o más
+                    </span>
+                </div>
+            </div>
+
+            
+            <div class="mb-3 row">
+                <label class="col-sm-3 col-form-label">Cantidad</label>
+                <div class="col-sm-9">
+                    <input type="number"
+                           class="form-control"
+                           formControlName="cantidad"
+                           placeholder="Cantidad que quieres comprar">
+                    
+                    <span class="form-text text-danger"
+                           *ngIf="campoEsValido('cantidad')">
+                         La cantidad debe de ser 0 o más
+                    </span>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col">
+                    <button type="submit"
+                            class="btn btn-primary float-end">
+                        Comprar
+                    </button>
+                </div>
+            </div>
+
+
+
+        </form>
+
+    </div>
+</div>
+
+
+
+
+<div class="row">
+    <div class="col">
+
+        <span>Valid</span>
+        <pre>{{ miFormulario2.valid }}</pre>
+
+        <span>Pristine</span>
+        <pre>{{ miFormulario2.pristine }}</pre>
+
+        <span>Touched</span>
+        <pre>{{ miFormulario2.touched }}</pre>
+
+        <span>Value</span>
+        <pre>{{ miFormulario2.value | json }}</pre>
+
+        <span>Precio</span>
+        <pre>{{ miFormulario2.controls.precio.errors | json }}</pre>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
