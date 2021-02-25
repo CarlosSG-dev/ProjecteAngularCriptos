@@ -12,11 +12,13 @@ import { CriptoExchangesComponent } from './components/cripto-exchanges/cripto-e
 import { ExchangeInputComponent } from './components/exchange-input/exchange-input.component';
 import { FormularioComponent } from './pages/formulario/formulario.component';
 import { CustomMinDirective } from './pages/formulario/directives/custom-min.directive';
+import { PipePersonalizadaMayusPipe } from './pipes/pipe-personalizada-mayus.pipe';
 
 
 
 @NgModule({
-  declarations: [PorPrecioComponent, PorRankingComponent, PorCapitalizacionComponent, VerMonedaComponent, CriptoTablaComponent, CriptoInputComponent, CriptoExchangesComponent, ExchangeInputComponent, FormularioComponent,  CustomMinDirective],
+  declarations: [PorPrecioComponent, PorRankingComponent, PorCapitalizacionComponent, VerMonedaComponent, CriptoTablaComponent, CriptoInputComponent, 
+    CriptoExchangesComponent, ExchangeInputComponent, FormularioComponent,  CustomMinDirective, PipePersonalizadaMayusPipe],
   imports: [
     CommonModule,
     FormsModule,

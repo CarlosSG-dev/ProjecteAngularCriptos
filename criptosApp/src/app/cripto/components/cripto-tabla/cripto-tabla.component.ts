@@ -9,6 +9,12 @@ import { Cripto } from '../../interfaces/cripto.interface';
 })
 export class CriptoTablaComponent implements OnInit {
 
+  enMayus: boolean = true;
+  
+  pasarAMayus(){
+    this.enMayus = !this.enMayus;
+  }
+
   @Input() criptos: Cripto[] = [];
   constructor() { }
 
