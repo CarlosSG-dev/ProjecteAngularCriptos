@@ -11,6 +11,8 @@ import { FormBuilder, FormGroup, Validators, ReactiveFormsModule, FormsModule, F
 })
 export class FormularioComponent {
 
+//Formulario Template
+
   persona = {
     genero: 'F',
     notificaciones: true,
